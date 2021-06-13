@@ -73,22 +73,13 @@
 
 
 <h2>New book</h2>
-<form class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="jO4+tbDgDUI2HzduIvwFHG1QnaoZWNqj47u6edFDaqMMbWeFnHKplym8EHfvUZm04CJ262QYxnFaFHl0J3f5hw==">
-
-  <div class="field">
-    <label for="book_title">Title</label>
-    <input class="book_title" type="text" name="book[title]" id="book_title">
-  </div>
-
-  <div class="field">
-    <label for="book_body">Body</label>
-    <textarea class="book_body" name="book[body]" id="book_body"></textarea>
-  </div>
-
-  <div class="actions">
-    <input type="submit" name="commit" value="Create Book" data-disable-with="Create Book">
-  </div>
-</form>
+<%= form_with model: @books, url:'/books', local:true do |f| %>
+  <h4>title</h4>
+  <%= f.text_field :title %>
+  <h4>body</h4>
+  <%= f.text_area :body %>
+  <%= f.submit 'Create Book' %>
+<% end %>
 
 
 </body></html>
