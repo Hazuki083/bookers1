@@ -5,6 +5,7 @@ class BooksController < ApplicationController
   end
 
   def show
+    @book = Book.find(params[:id])
 
   end
 
@@ -22,6 +23,7 @@ class BooksController < ApplicationController
   end
 
   def edit
+    @book = Book.find(params[:id])
 
   end
   def update
